@@ -1,44 +1,44 @@
 # DiorKrut's_Deck 🚀
 
-**DiorKrut's_Deck** — это проект портативного ИИ-терминала на базе микроконтроллера **ESP32-S3**. Устройство предназначено для взаимодействия с нейросетью Google Gemini напрямую через Wi-Fi, обеспечивая мобильность и удобный интерфейс.
+**DiorKrut's_Deck** is a portable AI terminal project based on the **ESP32-S3** microcontroller. The device is designed to interact with the Google Gemini AI directly via Wi-Fi, providing mobility and a sleek interface for on-the-go AI assistance.
 
-## ✨ Основные функции
-- **Direct Gemini API:** Прямое общение с ИИ без промежуточных серверов.
-- **Портативность:** Питание от Li-Po аккумулятора с системой защиты и зарядки.
-- **Цветной интерфейс:** Вывод данных на 2.8" дисплей ILI9341.
-- **Физический ввод:** Поддержка внешней клавиатуры через Native USB (ESP32-S3).
+## ✨ Features
+- **Direct Gemini API Integration:** Communicate with AI without the need for intermediate servers.
+- **Portability:** Powered by a Li-Po battery with an integrated charging and protection system.
+- **Color Interface:** Data visualization on a 2.8" ILI9341 TFT display.
+- **Physical Input:** External keyboard support via ESP32-S3 Native USB (USB OTG).
 
-## 🛠 Аппаратная часть (Hardware)
-- **Контроллер:** ESP32-S3 DevKit (Dual Type-C).
-- **Дисплей:** TFT LCD 2.8" (Контроллер ILI9341, 240x320, SPI).
-- **Питание:** - Li-Po аккумулятор 3.7V 1000 mAh.
-  - Контроллер заряда TP4056 с защитой от переразряда.
-  - Механический выключатель питания (Rocker Switch).
-- **Периферия:** Беспроводная клавиатура i8 (через USB OTG).
+## 🛠 Hardware Components
+- **Microcontroller:** ESP32-S3 DevKit (Dual Type-C ports).
+- **Display:** 2.8" TFT LCD (ILI9341 controller, 240x320 resolution, SPI interface).
+- **Power System:** - 3.7V 1000 mAh Li-Po battery.
+  - TP4056 charging module with over-discharge protection.
+  - Mechanical orange rocker switch for power control.
+- **Peripherals:** i8 Wireless keyboard (via USB OTG adapter).
 
-## 💻 Программный стек (Software)
-- **Язык:** C++
-- **Среда:** Arduino IDE
-- **Основные библиотеки:**
-  - `TFT_eSPI` — оптимизированная библиотека для дисплея.
-  - `ArduinoJson` — парсинг ответов от Gemini API.
-  - `WiFi.h` & `HTTPClient.h` — сетевое взаимодействие.
+## 💻 Software Stack
+- **Language:** C++
+- **IDE:** Arduino IDE
+- **Core Libraries:**
+  - `TFT_eSPI` – Optimized graphics library for the display.
+  - `ArduinoJson` – For parsing Gemini API JSON responses.
+  - `WiFi.h` & `HTTPClient.h` – For network connectivity.
 
-## 🔧 Схема подключения (Текущий статус)
-Система питания собрана по следующей схеме:
+## 🔧 Wiring Diagram (Current Progress)
+The power circuit is currently assembled as follows:
 1. **Battery (+/-)** -> **TP4056 (B+/B-)**.
-2. **TP4056 (OUT+)** -> **Выключатель** -> **ESP32-S3 (5V)**.
-3. **TP4056 (OUT-)** -> **ESP32-S3 (GND)**.
+2. **TP4056 (OUT+)** -> **Rocker Switch** -> **ESP32-S3 (5V pin)**.
+3. **TP4056 (OUT-)** -> **ESP32-S3 (GND pin)**.
 
-*Примечание: В текущей сборке красный провод используется для линии GND, коричневый — для линии 5V.*
+*Note: In the current prototype, the red wire is used for the GND line, and the brown wire is used for the 5V line.*
 
-## 🚀 Начало работы
-1. Получите API ключ в [Google AI Studio](https://aistudio.google.com/).
-2. Настройте `User_Setup.h` в библиотеке `TFT_eSPI` под пины вашей ESP32-S3.
-3. Прошейте контроллер через Arduino IDE.
+## 🚀 Getting Started
+1. Obtain your API key from [Google AI Studio](https://aistudio.google.com/).
+2. Configure `User_Setup.h` in the `TFT_eSPI` library to match your ESP32-S3 pinout.
+3. Flash the firmware using Arduino IDE.
 
-## 📄 Лицензия
-Этот проект распространяется под лицензией **MIT**. Подробности в файле [LICENSE](LICENSE).
+## 📄 License
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
 ---
-*Разработано DiorKrut*
+*Developed by DiorKrut*
