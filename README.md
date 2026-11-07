@@ -14,7 +14,7 @@
 - **Power System:** - 3.7V 1000 mAh Li-Po battery.
   - TP4056 charging module with over-discharge protection.
   - Mechanical orange rocker switch for power control.
-- **Peripherals:** i8 Wireless keyboard (via USB OTG adapter).
+- **Peripherals:** M5 Stack CardKB.
 
 ## 💻 Software Stack
 - **Language:** C++
